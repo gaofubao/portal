@@ -1,0 +1,15 @@
+syntax = "v1"
+
+import "ai.api"
+
+info (
+	author: "gaofubao"
+	date: "2023-03-09"
+	desc: "Portal 定义"
+)
+
+service portal-api {
+	@doc "健康检查"
+	@handler health
+	get /health () returns ()
+}

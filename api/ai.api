@@ -1,0 +1,26 @@
+syntax = "v1"
+
+info (
+	author: "gaofubao"
+	date: "2023-03-09"
+	desc: "AI 定义"
+)
+
+type (
+    ChatReq {
+        Question string `json:"question" form:"question"`
+    }
+    ChatResp {
+        Answer string `json:"answer" form:"answer"`
+    }
+)
+
+@server (
+    group: ai
+    prefix: /api/v1/ai
+)
+service portal-api {
+	@doc "交流"
+	@handler chat
+	post /chat (ChatReq) returns (ChatResp)
+}
