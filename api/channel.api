@@ -2,26 +2,26 @@ syntax = "v1"
 
 info (
 	author: "gaofubao"
-	date: "2023-03-09"
-	desc: "AI 定义"
+	date: "2023-03-10"
+	desc: "消息终端定义"
 )
 
 type (
-    ChatReq {
+    WechatReq {
         UserId string `json:"user_id"`
         Query string `json:"query"`
     }
-    ChatResp {
+    WechatResp {
         Answer string `json:"answer"`
     }
 )
 
 @server (
     group: ai
-    prefix: /api/v1/portal/ai
+    prefix: /api/v1/portal/wechat
 )
 service portal-api {
-	@doc "交流"
-	@handler chat
-	post / (ChatReq) returns (ChatResp)
+	@doc "企业微信回调"
+	@handler handleWechat
+	get / (WechatReq) returns (WechatResp)
 }

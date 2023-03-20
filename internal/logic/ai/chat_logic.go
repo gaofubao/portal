@@ -24,7 +24,13 @@ func NewChatLogic(ctx context.Context, svcCtx *svc.ServiceContext) *ChatLogic {
 }
 
 func (l *ChatLogic) Chat(req *types.ChatReq) (resp *types.ChatResp, err error) {
-	// todo: add your logic here and delete this line
+	resp = &types.ChatResp{}
 
+	reply, err := l.svcCtx.Model.Reply(req.UserId, req.Query)
+	if err != nil {
+		return
+	}
+
+	resp.Answer = reply
 	return
 }

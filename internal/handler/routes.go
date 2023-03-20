@@ -25,10 +25,10 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 		[]rest.Route{
 			{
 				Method:  http.MethodPost,
-				Path:    "/chat",
+				Path:    "/",
 				Handler: ai.ChatHandler(serverCtx),
 			},
 		},
-		rest.WithPrefix("/api/v1/ai"),
+		rest.WithPrefix("/api/v1/portal/ai"),
 	)
 }

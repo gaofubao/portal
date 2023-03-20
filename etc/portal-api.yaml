@@ -1,3 +1,8 @@
 Name: portal-api
 Host: 0.0.0.0
 Port: 8888
+Model:
+  Type: "chatgpt"
+  ApiKey: "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"
+  Description: "你是ChatGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。"
+  MaxTokens: 1000

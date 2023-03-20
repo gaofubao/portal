@@ -1,0 +1,28 @@
+### 获取 access token
+GET https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=ww797fe1e6262986c1&
+    corpsecret=b6LSdGDbSKHlA-7HSqJsMS1V3tsnxIuUJMWkpk6dtN8
+
+### 获取客服账号列表
+POST https://qyapi.weixin.qq.com/cgi-bin/kf/account/list?access_token={{wx_token}}
+
+{
+	"offset": 0,
+    "limit": 100
+}
+
+### 获取接待人员列表
+GET https://qyapi.weixin.qq.com/cgi-bin/kf/servicer/list?access_token={{wx_token}}&
+    open_kfid=wko4Z5cAAAl1aZl-_pOkLTyOmcvMeHPw
+
+###
+POST https://qyapi.weixin.qq.com/cgi-bin/kf/send_msg?access_token={{wx_token}}
+
+{
+   "touser" : "EXTERNAL_USERID",
+   "open_kfid": "OPEN_KFID",
+   "msgid": "MSGID",
+   "msgtype" : "text",
+   "text" : {
+       "content" : "你购买的物品已发货，可点击链接查看物流状态http://work.weixin.qq.com/xxxxxx"
+   }
+}

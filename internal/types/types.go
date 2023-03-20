@@ -2,9 +2,10 @@
 package types
 
 type ChatReq struct {
-	Question string `json:"question" form:"question"`
+	UserId string `json:"user_id"`
+	Query  string `json:"query"`
 }
 
 type ChatResp struct {
-	Answer string `json:"answer" form:"answer"`
+	Answer string `json:"answer"`
 }

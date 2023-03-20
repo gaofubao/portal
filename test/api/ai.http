@@ -1,0 +1,12 @@
+###
+POST {{baseUrl}}/ai
+Content-Type: application/json
+
+{
+  "user_id": "hello",
+  "query": "介绍一下 bilibili 公司"
+}
+
+###
+
+
